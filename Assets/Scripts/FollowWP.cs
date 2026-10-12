@@ -1,30 +1,67 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class FollowWP : MonoBehaviour
 {
     public GameObject[] waypoints;
-    int currentWP = 0;
+
+    private int currentWP = 0;
 
     public float speed = 10.0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float rotSpeed = 10.0f;
+    public float waypointDistance = 1.5f;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(this.transform.position, waypoints[currentWP].transform.position) < 3)
+        // Verifica se existem waypoints
+        if (waypoints == null || waypoints.Length == 0)
+            return;
+
+        if (waypoints[currentWP] == null)
+            return;
+
+        // Avança para o próximo waypoint quando estiver suficientemente perto
+        if (Vector3.Distance(
+            transform.position,
+            waypoints[currentWP].transform.position) < waypointDistance)
+        {
             currentWP++;
 
-        if (currentWP >= waypoints.Length)
-            currentWP = 0;
+            // Quando chega ao último waypoint, volta ao primeiro
+            if (currentWP >= waypoints.Length)
+                currentWP = 0;
+        }
 
-        this.transform.LookAt(waypoints[currentWP].transform);
-        this.transform.Translate(0, 0, speed * Time.deltaTime);
+        if (waypoints[currentWP] == null)
+            return;
+
+        // Calcula a direção para o próximo waypoint
+        Vector3 direction =
+            waypoints[currentWP].transform.position - transform.position;
+
+        // Mantém a rotação horizontal
+        direction.y = 0f;
+
+        // Roda suavemente na direção do movimento
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            Quaternion lookatWP = Quaternion.LookRotation(direction);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                lookatWP,
+                rotSpeed * Time.deltaTime
+            );
+        }
+
+        // Avança na direção para a qual o objeto está virado
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }

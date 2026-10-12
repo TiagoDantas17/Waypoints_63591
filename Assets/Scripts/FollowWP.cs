@@ -1,67 +1,141 @@
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowWP : MonoBehaviour
 {
+    public enum FollowMode
+    {
+        Waypoints,
+        Tracker
+    }
+
+    [Header("Modo de movimento")]
+    public FollowMode mode = FollowMode.Waypoints;
+
+    [Header("Waypoints do circuito")]
     public GameObject[] waypoints;
+
+    [Header("Tracker a seguir")]
+    public GameObject tracker;
+
+    [Header("Movimento")]
+    public float speed = 10.0f;
+    public float rotSpeed = 10.0f;
+
+    [Header("Distâncias")]
+    public float waypointDistance = 1.5f;
+    public float followDistance = 4.0f;
+    public float sideOffset = 0.0f;
+    public float stopDistance = 0.5f;
 
     private int currentWP = 0;
 
-    public float speed = 10.0f;
-    public float rotSpeed = 10.0f;
-    public float waypointDistance = 1.5f;
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        // Verifica se existem waypoints
-        if (waypoints == null || waypoints.Length == 0)
-            return;
-
-        if (waypoints[currentWP] == null)
-            return;
-
-        // Avança para o próximo waypoint quando estiver suficientemente perto
-        if (Vector3.Distance(
-            transform.position,
-            waypoints[currentWP].transform.position) < waypointDistance)
+        if (mode == FollowMode.Waypoints)
         {
-            currentWP++;
+            FollowWaypoints();
+        }
+        else
+        {
+            FollowTracker();
+        }
+    }
 
-            // Quando chega ao último waypoint, volta ao primeiro
-            if (currentWP >= waypoints.Length)
-                currentWP = 0;
+    // MODO 1: Percorrer os waypoints do circuito
+    void FollowWaypoints()
+    {
+        if (!FindValidWaypoint())
+            return;
+
+        Vector3 target =
+            waypoints[currentWP].transform.position;
+
+        target.y = transform.position.y;
+
+        // Verifica se chegou ao waypoint atual
+        if (Vector3.Distance(transform.position, target)
+            < waypointDistance)
+        {
+            // Passa ao próximo waypoint
+            currentWP = (currentWP + 1) % waypoints.Length;
+
+            if (!FindValidWaypoint())
+                return;
+
+            target = waypoints[currentWP].transform.position;
+            target.y = transform.position.y;
         }
 
-        if (waypoints[currentWP] == null)
+        MoveTowards(target, false);
+    }
+
+    // Ignora waypoints vazios ou não atribuídos
+    bool FindValidWaypoint()
+    {
+        if (waypoints == null || waypoints.Length == 0)
+            return false;
+
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            if (waypoints[currentWP] != null)
+                return true;
+
+            currentWP = (currentWP + 1) % waypoints.Length;
+        }
+
+        return false;
+    }
+
+    // MODO 2: Seguir o Tracker
+    void FollowTracker()
+    {
+        if (tracker == null)
             return;
 
-        // Calcula a direção para o próximo waypoint
-        Vector3 direction =
-            waypoints[currentWP].transform.position - transform.position;
+        // Define um ponto atrás do Tracker
+        Vector3 target =
+            tracker.transform.position
+            - tracker.transform.forward * followDistance
+            + tracker.transform.right * sideOffset;
 
-        // Mantém a rotação horizontal
+        // Mantém o movimento no plano horizontal
+        target.y = transform.position.y;
+
+        MoveTowards(target, true);
+    }
+
+    // Rotação suave e movimento para o destino
+    void MoveTowards(Vector3 target, bool stopNearTarget)
+    {
+        Vector3 direction = target - transform.position;
         direction.y = 0f;
 
-        // Roda suavemente na direção do movimento
-        if (direction.sqrMagnitude > 0.001f)
-        {
-            Quaternion lookatWP = Quaternion.LookRotation(direction);
+        float distance = direction.magnitude;
 
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                lookatWP,
-                rotSpeed * Time.deltaTime
-            );
-        }
+        if (distance < 0.05f)
+            return;
 
-        // Avança na direção para a qual o objeto está virado
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        // No modo Tracker, mantém alguma distância
+        if (stopNearTarget && distance <= stopDistance)
+            return;
+
+        // Calcula a direção do movimento
+        Quaternion lookatTarget =
+            Quaternion.LookRotation(direction);
+
+        // Roda suavemente em direção ao destino
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            lookatTarget,
+            rotSpeed * Time.deltaTime
+        );
+
+        // Avança para a frente
+        transform.Translate(
+            0f,
+            0f,
+            speed * Time.deltaTime
+        );
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Edge : MonoBehaviour
 {
-    public node startNode;
-    public node endNode;
-    public Edge(node from, node to)
+    public Node startNode;
+    public Node endNode;
+    public Edge(Node from, Node to)
     {
         startNode = from;
         endNode = to;

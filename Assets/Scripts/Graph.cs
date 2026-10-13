@@ -1,37 +1,38 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Graph : MonoBehaviour
+public class Graph
 {
     List<Edge> edges = new List<Edge>();
-    List<node> nodes = new List<node>();
-    List<node> pathList = new List<node>();
+    List<Node> nodes = new List<Node>();
+    public List<Node> pathList = new List<Node>();
 
     public Graph() { }
 
-    public void AddNote(GameObject id)
+    public void AddNode(GameObject id)
     {
-        node newNode = new node(id);
-        nodes.Add(newNode);
+        Node node = new Node(id);
+        nodes.Add(node);
     }
 
-    public void AddNode(GameObject fromNode, GameObject toNode)
+    public void AddEdge(GameObject fromNode, GameObject toNode)
     {
-        node from = Findnode(fromNode);
-        node to = Findnode(toNode);
+        Node from = FindNode(fromNode);
+        Node to = FindNode(toNode);
 
         if (from != null && to != null)
         {
-            Edge e = new Edge(from, to);
-            edges.Add(e);
-            from.edgeList.Add(e);
+            Edge edge = new Edge(from, to);
+            edges.Add(edge);
+            from.edgeList.Add(edge);
         }
     }
 
-    node Findnode(GameObject id)
+    Node FindNode(GameObject id)
     {
-        foreach (node n in nodes)
+        foreach (Node n in nodes)
         {
             if (n.getId() == id)
                 return n;
@@ -39,4 +40,13 @@ public class Graph : MonoBehaviour
 
         return null;
     }
-}
+
+    public bool AStar(GameObject starId, GameObject endId)
+    {
+        Node start = FindNode(starId);
+        Node end = FindNode(endId);
+
+        if (start == null || end == null)
+        {
+            return false;
+        }

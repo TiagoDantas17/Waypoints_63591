@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Graph
 {
     List<Edge> edges = new List<Edge>();
     List<Node> nodes = new List<Node>();
+
     public List<Node> pathList = new List<Node>();
 
     public Graph() { }
@@ -35,7 +37,9 @@ public class Graph
         foreach (Node n in nodes)
         {
             if (n.getId() == id)
+            {
                 return n;
+            }
         }
 
         return null;
@@ -50,3 +54,10 @@ public class Graph
         {
             return false;
         }
+
+        // Os nós existem.
+        // Continuar aqui a implementação do algoritmo A*.
+
+        return true;
+    }
+}

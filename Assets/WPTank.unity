@@ -174,8 +174,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37913818}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37913817}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &37913816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 37913815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &37913817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37913816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &37913818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37913816}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &64675236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,8 +293,91 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64675239}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64675238}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &64675237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 64675236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &64675238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64675237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 379322450}
+    dir: 1
+  - node1: {fileID: 64675237}
+    node2: {fileID: 168730522}
+    dir: 1
+  - node1: {fileID: 2121196210}
+    node2: {fileID: 207748246}
+    dir: 1
+  - node1: {fileID: 909808454}
+    node2: {fileID: 207748246}
+    dir: 1
+  - node1: {fileID: 909808454}
+    node2: {fileID: 207748246}
+    dir: 1
+  - node1: {fileID: 550031288}
+    node2: {fileID: 756959272}
+    dir: 1
+  - node1: {fileID: 1589932450}
+    node2: {fileID: 980829762}
+    dir: 1
+  - node1: {fileID: 1564654537}
+    node2: {fileID: 141677324}
+    dir: 1
+  - node1: {fileID: 1589932450}
+    node2: {fileID: 980829762}
+    dir: 1
+--- !u!114 &64675239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64675237}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &141677323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,8 +433,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 141677326}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 141677325}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &141677324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 141677323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &141677325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141677324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &141677326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141677324}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &161812334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,8 +552,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 161812337}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 161812336}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &161812335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 161812334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &161812336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161812335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &161812337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161812335}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &168730521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,8 +671,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168730524}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 168730523}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &168730522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 168730521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &168730523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168730522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &168730524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168730522}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &207748245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,8 +790,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207748248}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 207748247}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &207748246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 207748245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &207748247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207748246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &207748248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207748246}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &379322449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,8 +909,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379322452}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379322451}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &379322450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 379322449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379322451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379322450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &379322452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379322450}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &533975241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,8 +1028,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533975244}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533975243}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &533975242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 533975241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &533975243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533975242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &533975244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533975242}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &550031287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,8 +1147,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 550031290}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 550031289}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &550031288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 550031287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &550031289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550031288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &550031290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550031288}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &756959271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -687,8 +1266,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756959274}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 756959273}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &756959272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 756959271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &756959273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756959272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &756959274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756959272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1 &906416204
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,8 +1512,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909808456}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909808455}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &909808454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 909808453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909808455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909808454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &909808456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909808454}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &980829761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -928,8 +1631,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980829764}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980829763}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &980829762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 980829761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &980829763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980829762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &980829764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980829762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1 &1113270534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,8 +1877,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123944808}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123944807}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &1123944806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 1123944805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1123944807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123944806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &1123944808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123944806}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1 &1157254855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,8 +2097,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564654539}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564654538}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &1564654537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 1564654536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564654538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564654537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &1564654539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564654537}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &1589932449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1327,8 +2216,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589932452}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589932451}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &1589932450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 1589932449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1589932451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589932450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &1589932452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589932450}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &1606785907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1466,8 +2417,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1695092514}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1695092513}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &1695092512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 1695092511}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1695092513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695092512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &1695092514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695092512}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &1761980783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1515,6 +2528,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: c58838a1d6c17484393fa08cdb7f059d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1761980785}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: c58838a1d6c17484393fa08cdb7f059d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761980786}
   m_SourcePrefab: {fileID: 100100000, guid: c58838a1d6c17484393fa08cdb7f059d, type: 3}
 --- !u!1 &1761980784 stripped
 GameObject:
@@ -1542,6 +2558,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4133282, y: 1.657383, z: 2.1057386}
   m_Center: {x: 0.0262537, y: 0.8644688, z: 0.06936526}
+--- !u!114 &1761980786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761980784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Follow
+  wpManager: {fileID: 906416204}
 --- !u!1001 &2121196209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1597,8 +2626,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121196212}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121196211}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &2121196210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 2121196209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2121196211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121196210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &2121196212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121196210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1001 &2144147022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1654,8 +2745,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144147025}
+    - targetCorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144147024}
   m_SourcePrefab: {fileID: 100100000, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+--- !u!1 &2144147023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244365876284636, guid: 650ea2e5f9c3b4ae4aa6e7fdf6cf157b, type: 3}
+  m_PrefabInstance: {fileID: 2144147022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2144147024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144147023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee48f3a89d1493f4faa45b2bda3629de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WPManager
+  waypoints:
+  - {fileID: 1695092512}
+  - {fileID: 64675237}
+  - {fileID: 2121196210}
+  - {fileID: 909808454}
+  - {fileID: 550031288}
+  - {fileID: 1589932450}
+  - {fileID: 1564654537}
+  - {fileID: 37913816}
+  - {fileID: 168730522}
+  - {fileID: 207748246}
+  - {fileID: 756959272}
+  - {fileID: 980829762}
+  - {fileID: 141677324}
+  - {fileID: 161812335}
+  - {fileID: 2144147023}
+  - {fileID: 1123944806}
+  - {fileID: 533975242}
+  - {fileID: 379322450}
+  links:
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 1
+  - node1: {fileID: 1695092512}
+    node2: {fileID: 1695092512}
+    dir: 0
+--- !u!114 &2144147025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144147023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850a6264073e70840bf0a350db1df2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FollowWP
+  wpManager: {fileID: 906416204}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

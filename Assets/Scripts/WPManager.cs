@@ -1,7 +1,6 @@
 
 using UnityEngine;
 
-
 [System.Serializable]
 public struct Link
 {
@@ -16,8 +15,6 @@ public class WPManager : MonoBehaviour
     public GameObject[] waypoints;
     public Link[] links;
     public Graph graph = new Graph();
-
-
 
     void Start()
     {
@@ -37,5 +34,9 @@ public class WPManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    void Update()
+    {
     }
 }

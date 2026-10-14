@@ -2,61 +2,88 @@ using UnityEngine;
 
 public class FollowWP : MonoBehaviour
 {
-    public GameObject[] waypoints;      // waypoints, por ordem
+    Transform goal;
+    float speed = 5.0f;
+    float accuracy = 5.0f;
+    float rotSpeed = 2.0f;
+
+    public GameObject wpManager;
+    GameObject[] wps;
+    GameObject currentNode;
     int currentWP = 0;
-
-    public float speed = 10.0f;         // velocidade do tanque
-    public float rotSpeed = 10.0f;      // velocidade de rotação
-    public float lookAhead = 10.0f;     // distância máxima a que o tracker fica à frente
-
-    GameObject tracker;                 // objeto invisível que "puxa" o tanque
+    Graph g;
 
     void Start()
     {
-        tracker = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        DestroyImmediate(tracker.GetComponent<Collider>());
-        tracker.GetComponent<MeshRenderer>().enabled = false;   // põe a true para o veres
+        if (wpManager == null)
+        {
+            Debug.LogError("Wp Manager não está atribuído no Inspector.", this);
+            enabled = false; // evita o spam de erros no LateUpdate
+            return;
+        }
 
-        tracker.transform.position = this.transform.position;
-        tracker.transform.rotation = this.transform.rotation;
+        WPManager manager = wpManager.GetComponent<WPManager>();
+        if (manager == null)
+        {
+            Debug.LogError("O objeto atribuído em Wp Manager não tem o componente WPManager.", this);
+            enabled = false;
+            return;
+        }
+
+        wps = manager.waypoints;
+        g = manager.graph;
+
+        if (wps == null || wps.Length == 0 || g == null)
+        {
+            Debug.LogError("WPManager sem waypoints ou sem grafo. Verifica a lista de waypoints.", this);
+            enabled = false;
+            return;
+        }
+
+        currentNode = wps[0];
     }
 
-    void ProgressTracker()
+    public void GoToHeli()
     {
-        // Se o tracker já vai longe demais à frente, espera pelo tanque
-        if (Vector3.Distance(tracker.transform.position, this.transform.position) > lookAhead)
-            return;
+        g.AStar(currentNode, wps[5]);
+        currentWP = 0;
+    }
 
-        // Chegou ao waypoint? Passa ao seguinte
-        if (Vector3.Distance(tracker.transform.position,
-                             waypoints[currentWP].transform.position) < 3.0f)
-            currentWP++;
+    public void GoToRuin()
+    {
+        g.AStar(currentNode, wps[14]);
+        currentWP = 0;
+    }
 
-        // Chegou ao fim da lista: volta ao início
-        if (currentWP >= waypoints.Length)
-            currentWP = 0;
-
-        tracker.transform.LookAt(waypoints[currentWP].transform);
-        tracker.transform.Translate(0, 0, (speed + 20) * Time.deltaTime);
+    public void GoToFactory()
+    {
+        g.AStar(currentNode, wps[9]);
+        currentWP = 0;
     }
 
     void LateUpdate()
     {
-        if (waypoints == null || waypoints.Length == 0)
-        {
-            Debug.LogError("FollowWP: o array de waypoints está vazio!", this);
+        if (g == null || g.pathList.Count == 0 || currentWP == g.pathList.Count)
             return;
+
+        if (Vector3.Distance(g.pathList[currentWP].getId().transform.position, this.transform.position) < accuracy)
+        {
+            currentNode = g.pathList[currentWP].getId();
+            currentWP++;
         }
 
-        ProgressTracker();
+        if (currentWP < g.pathList.Count)
+        {
+            goal = g.pathList[currentWP].getId().transform;
+            Vector3 lookAtGoal = new Vector3(goal.position.x, this.transform.position.y, goal.position.z);
+            Vector3 direction = lookAtGoal - this.transform.position;
 
-        // O tanque olha para o tracker, não diretamente para o waypoint
-        Quaternion lookAtWP = Quaternion.LookRotation(
-            tracker.transform.position - this.transform.position);
+            if (direction != Vector3.zero)
+            {
+                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
+            }
 
-        this.transform.rotation = Quaternion.Slerp(
-            this.transform.rotation, lookAtWP, rotSpeed * Time.deltaTime);
-
-        this.transform.Translate(0, 0, speed * Time.deltaTime);
+            this.transform.Translate(0, 0, speed * Time.deltaTime);
+        }
     }
 }

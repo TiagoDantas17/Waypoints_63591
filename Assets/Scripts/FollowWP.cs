@@ -1,70 +1,62 @@
-
 using UnityEngine;
 
-public class Follow : MonoBehaviour
+public class FollowWP : MonoBehaviour
 {
-    Transform goal;
-    float speed = 5.0f;
-    float accuracy = 1.0f;
-    float rotSpeed = 2.0f;
-
-    public GameObject wpManager;
-    GameObject[] wps;
-    GameObject currentNode;
+    public GameObject[] waypoints;      // waypoints, por ordem
     int currentWP = 0;
-    Graph g;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float speed = 10.0f;         // velocidade do tanque
+    public float rotSpeed = 10.0f;      // velocidade de rotação
+    public float lookAhead = 10.0f;     // distância máxima a que o tracker fica à frente
+
+    GameObject tracker;                 // objeto invisível que "puxa" o tanque
+
     void Start()
     {
-        wps = wpManager.GetComponent<WPManager>().waypoints;
-        g = wpManager.GetComponent<WPManager>().graph;
-        currentNode = wps[0];
+        tracker = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        DestroyImmediate(tracker.GetComponent<Collider>());
+        tracker.GetComponent<MeshRenderer>().enabled = false;   // põe a true para o veres
+
+        tracker.transform.position = this.transform.position;
+        tracker.transform.rotation = this.transform.rotation;
     }
 
-    public void GoToHeli()
+    void ProgressTracker()
     {
-        g.AStar(currentNode, wps[0]);
-        currentWP = 0;
-    }
+        // Se o tracker já vai longe demais à frente, espera pelo tanque
+        if (Vector3.Distance(tracker.transform.position, this.transform.position) > lookAhead)
+            return;
 
-    public void GoToRuin()
-    {
-        g.AStar(currentNode, wps[1]);
-        currentWP = 0;
+        // Chegou ao waypoint? Passa ao seguinte
+        if (Vector3.Distance(tracker.transform.position,
+                             waypoints[currentWP].transform.position) < 3.0f)
+            currentWP++;
+
+        // Chegou ao fim da lista: volta ao início
+        if (currentWP >= waypoints.Length)
+            currentWP = 0;
+
+        tracker.transform.LookAt(waypoints[currentWP].transform);
+        tracker.transform.Translate(0, 0, (speed + 20) * Time.deltaTime);
     }
 
     void LateUpdate()
     {
-        // Sem caminho ou já chegou ao fim: não faz nada
-        if (g.pathList.Count == 0 || currentWP == g.pathList.Count)
+        if (waypoints == null || waypoints.Length == 0)
+        {
+            Debug.LogError("FollowWP: o array de waypoints está vazio!", this);
             return;
-
-        // Chegou ao waypoint atual? Passa ao seguinte
-        if (Vector3.Distance(
-                g.pathList[currentWP].getId().transform.position,
-                this.transform.position) < accuracy)
-        {
-            currentNode = g.pathList[currentWP].getId();
-            currentWP++;
         }
 
-        // Ainda há waypoints: roda e move-se em direção ao próximo
-        if (currentWP < g.pathList.Count)
-        {
-            goal = g.pathList[currentWP].getId().transform;
+        ProgressTracker();
 
-            Vector3 lookAtGoal = new Vector3(goal.position.x,
-                                             this.transform.position.y,
-                                             goal.position.z);
-            Vector3 direction = lookAtGoal - this.transform.position;
+        // O tanque olha para o tracker, não diretamente para o waypoint
+        Quaternion lookAtWP = Quaternion.LookRotation(
+            tracker.transform.position - this.transform.position);
 
-            this.transform.rotation = Quaternion.Slerp(
-                this.transform.rotation,
-                Quaternion.LookRotation(direction),
-                Time.deltaTime * rotSpeed);
+        this.transform.rotation = Quaternion.Slerp(
+            this.transform.rotation, lookAtWP, rotSpeed * Time.deltaTime);
 
-            this.transform.Translate(0, 0, speed * Time.deltaTime);
-        }
+        this.transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }

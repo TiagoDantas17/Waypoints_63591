@@ -2,88 +2,50 @@ using UnityEngine;
 
 public class FollowWP : MonoBehaviour
 {
-    Transform goal;
-    float speed = 5.0f;
-    float accuracy = 5.0f;
-    float rotSpeed = 2.0f;
+    public WPManager wpManager;
+    public float speed = 10f;
+    public float rotSpeed = 5f;
+    public float accuracy = 1f;
 
-    public GameObject wpManager;
     GameObject[] wps;
-    GameObject currentNode;
     int currentWP = 0;
-    Graph g;
 
     void Start()
     {
         if (wpManager == null)
-        {
-            Debug.LogError("Wp Manager não está atribuído no Inspector.", this);
-            enabled = false; // evita o spam de erros no LateUpdate
-            return;
-        }
+            wpManager = FindFirstObjectByType<WPManager>();
 
-        WPManager manager = wpManager.GetComponent<WPManager>();
-        if (manager == null)
+        if (wpManager == null)
         {
-            Debug.LogError("O objeto atribuído em Wp Manager não tem o componente WPManager.", this);
+            Debug.LogError("Não existe nenhum objeto com o script WPManager na cena.", this);
             enabled = false;
             return;
         }
 
-        wps = manager.waypoints;
-        g = manager.graph;
+        wps = wpManager.waypoints;
 
-        if (wps == null || wps.Length == 0 || g == null)
+        if (wps == null || wps.Length == 0)
         {
-            Debug.LogError("WPManager sem waypoints ou sem grafo. Verifica a lista de waypoints.", this);
+            Debug.LogError("O WPManager não tem waypoints no array.", this);
             enabled = false;
-            return;
         }
-
-        currentNode = wps[0];
-    }
-
-    public void GoToHeli()
-    {
-        g.AStar(currentNode, wps[5]);
-        currentWP = 0;
-    }
-
-    public void GoToRuin()
-    {
-        g.AStar(currentNode, wps[14]);
-        currentWP = 0;
-    }
-
-    public void GoToFactory()
-    {
-        g.AStar(currentNode, wps[9]);
-        currentWP = 0;
     }
 
     void LateUpdate()
     {
-        if (g == null || g.pathList.Count == 0 || currentWP == g.pathList.Count)
-            return;
+        Vector3 target = wps[currentWP].transform.position;
+        target.y = transform.position.y;
 
-        if (Vector3.Distance(g.pathList[currentWP].getId().transform.position, this.transform.position) < accuracy)
+        if (Vector3.Distance(transform.position, target) < accuracy)
+            currentWP = (currentWP + 1) % wps.Length;
+
+        Vector3 dir = target - transform.position;
+        if (dir.sqrMagnitude > 0.001f)
         {
-            currentNode = g.pathList[currentWP].getId();
-            currentWP++;
+            Quaternion look = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, look, rotSpeed * Time.deltaTime);
         }
 
-        if (currentWP < g.pathList.Count)
-        {
-            goal = g.pathList[currentWP].getId().transform;
-            Vector3 lookAtGoal = new Vector3(goal.position.x, this.transform.position.y, goal.position.z);
-            Vector3 direction = lookAtGoal - this.transform.position;
-
-            if (direction != Vector3.zero)
-            {
-                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
-            }
-
-            this.transform.Translate(0, 0, speed * Time.deltaTime);
-        }
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }
